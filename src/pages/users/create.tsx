@@ -3,7 +3,6 @@ import {
   Button,
   Divider,
   Flex,
-  Heading,
   HStack,
   SimpleGrid,
   VStack,
@@ -12,6 +11,7 @@ import {
 import { Header } from '../../components/Header';
 import { Sidebar } from '../../components/Sidebar';
 import { Input } from '../../components/Form/Input';
+import { TitlePage } from '../../components/Header/TitlePage';
 
 export default function UserCreate() {
   return (
@@ -22,9 +22,7 @@ export default function UserCreate() {
         <Sidebar />
 
         <Box flex="1" bg="gray.800" p="8" borderRadius={8}>
-          <Heading size="lg" fontWeight="normal">
-            Create User
-          </Heading>
+          <TitlePage title="Users" />
 
           <Divider my="6" borderColor="gray.700" />
 

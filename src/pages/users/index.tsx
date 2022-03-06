@@ -3,7 +3,6 @@ import {
   Button,
   Checkbox,
   Flex,
-  Heading,
   Icon,
   Table,
   Tbody,
@@ -16,7 +15,8 @@ import {
 import { RiAddLine, RiPencilLine } from 'react-icons/ri';
 
 import { Header } from '../../components/Header';
-import { Pagination } from '../../components/Pagination';
+import { TitlePage } from '../../components/Header/TitlePage';
+import { Pagination } from '../../components/Paginator';
 import { Sidebar } from '../../components/Sidebar';
 
 export default function UserList() {
@@ -29,9 +29,7 @@ export default function UserList() {
 
         <Box flex="1" bg="gray.800" p="8" borderRadius={8}>
           <Flex mb="8" justify="space-between" align="center">
-            <Heading size="lg" fontWeight="normal">
-              Users
-            </Heading>
+            <TitlePage title="Users" />
 
             <Button
               as="a"
