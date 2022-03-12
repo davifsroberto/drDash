@@ -11,6 +11,7 @@ import {
   Thead,
   Tr,
   Text,
+  useBreakpointValue,
 } from '@chakra-ui/react';
 import { RiAddLine, RiPencilLine } from 'react-icons/ri';
 
@@ -20,6 +21,11 @@ import { Pagination } from '../../components/Paginator';
 import { Sidebar } from '../../components/Sidebar';
 
 export default function UserList() {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   return (
     <Box>
       <Header />
@@ -44,14 +50,14 @@ export default function UserList() {
 
           <Table colorScheme="whiteAlpha">
             <Thead>
-              <Tr px="6" color="gray.300" width="8">
-                <Th>
+              <Tr color="gray.300" width="8">
+                <Th px={['4', '4', '6']}>
                   <Checkbox colorScheme="pink" />
                 </Th>
 
                 <Th>User</Th>
 
-                <Th>Created Date</Th>
+                {isWideVersion && <Th>Created Date</Th>}
 
                 <Th width="8"></Th>
               </Tr>
@@ -59,7 +65,7 @@ export default function UserList() {
 
             <Tbody>
               <Tr>
-                <Td px="6">
+                <Td px={['4', '4', '6']}>
                   <Checkbox colorScheme="pink" />
                 </Td>
 
@@ -73,7 +79,7 @@ export default function UserList() {
                   </Box>
                 </Td>
 
-                <Td>2020-03-06</Td>
+                {isWideVersion && <Td>2020-03-06</Td>}
 
                 <Td>
                   <Button

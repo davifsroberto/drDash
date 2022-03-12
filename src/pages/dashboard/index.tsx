@@ -24,7 +24,7 @@ export default function Dashboard() {
           minChildWidth="320px"
           alignContent="flex-start"
         >
-          <Box p="8" bg="gray.800" borderRadius={8}>
+          <Box p={['4', '8']} bg="gray.800" borderRadius={8}>
             <Text fontSize="lg" mb="4">
               Week Subscriptions
             </Text>
@@ -36,15 +36,8 @@ export default function Dashboard() {
               series={series}
             />
           </Box>
-        </SimpleGrid>
 
-        <SimpleGrid
-          flex="1"
-          gap="4"
-          minChildWidth="320px"
-          alignContent="flex-start"
-        >
-          <Box p="8" bg="gray.800" borderRadius={8}>
+          <Box p={['4', '8']} bg="gray.800" borderRadius={8}>
             <Text fontSize="lg" mb="4">
               Opening
             </Text>
