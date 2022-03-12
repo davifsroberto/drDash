@@ -1,8 +1,21 @@
 import { Button, Flex, Stack } from '@chakra-ui/react';
+import { SubmitHandler, useForm, useFormContext } from 'react-hook-form';
 
 import { Input } from '../components/Form/Input';
 
+type SingInFormData = {
+  email: string;
+  password: string;
+};
+
 export default function SingIn() {
+  const { register, handleSubmit, formState } = useForm();
+
+  const handleSignIn: SubmitHandler<SingInFormData> = async (values) => {
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    console.log(values);
+  };
+
   return (
     <Flex w="100vw" h="100vh" align="center" justify="center">
       <Flex
@@ -13,14 +26,31 @@ export default function SingIn() {
         flexDir="column"
         maxWidth="360"
         borderRadius="8"
+        onSubmit={handleSubmit(handleSignIn)}
       >
         <Stack spacing="4">
-          <Input name="email" label="E-mail" type="email" />
+          <Input
+            {...register('email')}
+            name="email"
+            label="E-mail"
+            type="email"
+          />
 
-          <Input name="password" label="Password" type="password" />
+          <Input
+            {...register('password')}
+            name="password"
+            label="Password"
+            type="password"
+          />
         </Stack>
 
-        <Button type="submit" mt="6" colorScheme="pink" size="lg">
+        <Button
+          isLoading={formState.isSubmitting}
+          type="submit"
+          mt="6"
+          colorScheme="pink"
+          size="lg"
+        >
           Log In
         </Button>
       </Flex>
