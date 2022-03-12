@@ -2,15 +2,13 @@ import dynamic from 'next/dynamic';
 
 import { Box, Flex, SimpleGrid, Text } from '@chakra-ui/react';
 
-import { Header } from '../components/Header';
-import { Sidebar } from '../components/Sidebar';
-import { ApexOptionsHelper } from './helpers/dashboard.helper';
+import { Header } from '../../components/Header';
+import { Sidebar } from '../../components/Sidebar';
+import { ApexOptionsHelper, series } from './configChart';
 
 const Chart = dynamic(() => import('react-apexcharts'), {
   ssr: false,
 });
-
-const series = [{ name: 'series-1', data: [31, 40, 28, 51, 42, 109, 100] }];
 
 export default function Dashboard() {
   return (

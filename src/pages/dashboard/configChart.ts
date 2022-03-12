@@ -2,6 +2,10 @@ import { ApexOptions } from 'apexcharts';
 
 import { theme } from '../../styles/theme';
 
+export const series = [
+  { name: 'series-1', data: [31, 40, 28, 51, 42, 109, 100] },
+];
+
 export function ApexOptionsHelper(): ApexOptions {
   return {
     chart: {
