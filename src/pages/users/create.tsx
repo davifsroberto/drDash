@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import {
   Box,
   Button,
@@ -46,7 +48,9 @@ export default function UserCreate() {
 
           <Flex mt="8" justify="flex-end">
             <HStack spacing="4">
-              <Button colorScheme="whiteAlpha">Cancel</Button>
+              <Link href="/users" passHref>
+                <Button colorScheme="whiteAlpha">Cancel</Button>
+              </Link>
 
               <Button colorScheme="pink">Create</Button>
             </HStack>
